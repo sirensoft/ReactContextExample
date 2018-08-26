@@ -27,7 +27,7 @@ export default class Red extends React.Component {
             <Consumer>
                 {(context) =>
                     <div style={{ color: 'red' }}>
-                        <h3>3.Red Component</h3>
+                        <h3>1.Red Component</h3>
                         <form onSubmit={this.onSubmit(context)}>
 
                             <input onChange={this.onChange} value={this.state.name} placeholder='input data..' /> <span>&#9166;</span>
