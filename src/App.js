@@ -7,17 +7,27 @@ import Green from './Green'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 const Main = () => (
-
   <Router>
     <div>
-
-      <Link to='/' >Home</Link> |  
-      <Link to='/red' >Red</Link> | 
-      <Link to='/green' >Green</Link>
-
-      <Route exact path='/' />
-      <Route exact path='/red' component={Red} />
-      <Route exact path='/green' component={Green} />
+      <AppProvider>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/green">Green</Link>
+          </li>
+          <li>
+            <Link to="/red">Red</Link>
+          </li>
+        </ul>
+        <hr />
+        <Route exact path="/" />
+        <Route path="/green" component={Green} />
+        <Route path="/red" component={Red} />
+        <hr />
+        <Display />
+      </AppProvider>
     </div>
   </Router>
 )
@@ -28,16 +38,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-
-        <AppProvider>
-          <Main />
-          <hr />
-          <Display />
-        </AppProvider>
-
-      </div>
-
+      <Main />
     );
   }
 }
