@@ -3,6 +3,11 @@ import { Consumer } from './AppContext'
 
 export default class Green extends React.Component {
 
+    
+    componentDidMount(){
+       console.log(this.props)
+    }
+
     render() {
         return (
             <Consumer>

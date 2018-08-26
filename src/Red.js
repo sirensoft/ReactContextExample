@@ -8,6 +8,7 @@ export default class Red extends React.Component {
         this.state = {
             name: ''
         }
+        this.inputRef = React.createRef()
     }
 
     onChange = (e) => {
@@ -21,6 +22,9 @@ export default class Red extends React.Component {
         context.randomNum();
         this.setState({ name: '' })
     }
+    componentDidMount(){
+        this.inputRef.current.focus()
+    }
 
     render() {
         return (
@@ -29,8 +33,7 @@ export default class Red extends React.Component {
                     <div style={{ color: 'red' }}>
                         <h3>1.Red Component</h3>
                         <form onSubmit={this.onSubmit(context)}>
-
-                            <input onChange={this.onChange} value={this.state.name} placeholder='input data..' /> <span>&#9166;</span>
+                            <input ref= {this.inputRef} onChange={this.onChange} value={this.state.name} placeholder='input data..' /> <span>&#9166;</span>
                             <div >{context.input}<br />{context.random}</div>
                         </form>
                     </div>
