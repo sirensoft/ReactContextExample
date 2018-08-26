@@ -10,6 +10,7 @@ const Main = () => (
   <Router>
     <div>
       <AppProvider>
+     
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -21,12 +22,13 @@ const Main = () => (
             <Link to="/red">Red</Link>
           </li>
         </ul>
+        <Display />
         <hr />
         <Route exact path="/" />
         <Route path="/green" component={Green} />
         <Route path="/red" component={Red} />
         <hr />
-        <Display />
+        
       </AppProvider>
     </div>
   </Router>

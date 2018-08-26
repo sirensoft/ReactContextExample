@@ -8,7 +8,7 @@ export default class Display extends React.Component {
             <Consumer>
                 {(context) =>
                     <div>
-                        input: {context.input} <br /> random : {context.random}
+                        input: {context.input} , random : {context.random}
                     </div>
                 }
             </Consumer>
